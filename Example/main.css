@@ -1,0 +1,47 @@
+.chart div {
+    font: 10px sans-serif;
+    background-color: steelblue;
+    border: 1px solid #ccc;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+    position: relative;
+  }
+.center {
+    text-align: center;
+
+    color: red;
+  }
+#bImage {
+    background-image: url(pictures/olympics.jpg);
+    padding: 15px;
+    color:white;
+    opacity: 0.3;
+  }
+.bImage {
+    background-image: url(pictures/olympics.jpg);
+    background-color: #cccccc;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: 0.3;
+  }
+
+  body{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6),
+              rgba(255, 255, 255, 0.6),
+              rgba(255, 255, 255, 0.6),
+              rgba(255, 255, 255, 0.6)),
+              url(pictures/olympics.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-blend-mode:hard-light;
+    height: 10px;
+    }
+text{
+  color: #ccc;
+}
