@@ -26,8 +26,8 @@ var yH = d3.scaleBand()			// x = d3.scaleBand()
 var xH = d3.scaleLinear()		// y = d3.scaleLinear()
     .rangeRound([0, width]);	// .rangeRound([height, 0]);
 
-var z = d3.scaleOrdinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+var zH = d3.scaleOrdinal()
+  .range(["indianred", "darkgray", "Gold"]);
 
 d3.csv("top_ten_countries.csv", function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
@@ -41,13 +41,13 @@ d3.csv("top_ten_countries.csv", function(d, i, columns) {
   data.sort(function(a, b) { return b.total - a.total; });
   yH.domain(data.map(function(d) { return d.Country; }));					// x.domain...
   xH.domain([0, d3.max(data, function(d) { return d.total; })]).nice();	// y.domain...
-  z.domain(keys);
+  zH.domain(keys);
 
   g.append("g")
     .selectAll("g")
     .data(d3.stack().keys(keys)(data))
     .enter().append("g")
-      .attr("fill", function(d) { return z(d.key); })
+      .attr("fill", function(d) { return zH(d.key); })
     .selectAll("rect")
     .data(function(d) { return d; })
     .enter().append("rect")
@@ -89,7 +89,7 @@ d3.csv("top_ten_countries.csv", function(d, i, columns) {
       .attr("x", width - 19)
       .attr("width", 19)
       .attr("height", 19)
-      .attr("fill", z);
+      .attr("fill", zH);
 
   legend.append("text")
       .attr("x", width - 24)
