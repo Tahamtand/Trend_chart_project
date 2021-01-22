@@ -5,19 +5,26 @@
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="StackedChart.js" defer></script>
 <link rel="stylesheet" href="StackedChart.css">
+<title>Winter Olympic Data</title>
 </head>
 
 <body>
-    
-<img src="olympicflag.jpg" class="olympic_pic" alt="olympic picture">
+    <div >
+        <h1>Top 10 Olympic  Medal Winning Countries From (1924-2014)</h1>
+    </div>
+<div class="main_info">   
+    <img src="olympicflag.jpg" class="olympic_pic" alt="olympic picture">
 
-<div class="data_table">
-    <svg id="chart" width="650" height="400"></svg>
     <p class="input_name select_year">Select year:</p>
     <select id="year"></select>
-    <input type="checkbox" id="sort">	
-    <p class="input_name">Toggle sort</p>
-</div>
-
+    <div>
+        <input type="checkbox" id="sort">	
+        <p class="input_name">Toggle sort</p>
+    </div>
+    <div class="data_table">
+        <svg id="chart" width="650" height="400"></svg>
+        
+    </div>
+</div> 
 </body>
 </html> 

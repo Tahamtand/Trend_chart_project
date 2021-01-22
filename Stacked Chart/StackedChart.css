@@ -9,10 +9,13 @@ body {
 }
 
 
-
+.main_info {
+    margin: 230px 0 0 -260px;
+}
 .olympic_pic {
+    display: none;
     position: absolute;
-    top: 0;
+    top: 100px;
     opacity: 0.25;
     width:inherit;
     max-height: 50%;
@@ -28,4 +31,7 @@ body {
     font-weight: bold;
     text-anchor: middle;
 }
-   
+
+.toggle_option {
+
+}
