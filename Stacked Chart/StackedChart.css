@@ -1,0 +1,31 @@
+body {
+	margin: auto;
+	width: 650px;
+	font: 12px arial;
+}
+
+.input_name {
+    display: inline-block;
+}
+
+
+
+.olympic_pic {
+    position: absolute;
+    top: 0;
+    opacity: 0.25;
+    width:inherit;
+    max-height: 50%;
+}
+
+.data_table {
+    z-index: 10;
+    position: relative;
+}
+
+.legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+   
