@@ -9,21 +9,24 @@
 </head>
 
 <body>
-    <h1 class="top_title">Top 10 Olympic  Medal Winning Countries From (1924-2014)
-    </h1>
-    <div class="main_info">  
-        <div>
-            <img src="olympicflag.jpg" class="olympic_pic" alt="olympic picture">
-            <p class="input_name select_year">Select year:</p>
-            <select id="year"></select>
+    <img src="olympicflag.jpg" class="olympic_pic" alt="olympic picture">
+    <div id="bkg_img">
+        <h1 class="top_title">Top 10 Olympic  Medal Winning Countries From (1924-2014)
+        </h1>
+        <div class="main_info">  
             <div>
-                <input type="checkbox" id="sort">	
-                <p class="input_name">Toggle sort</p>
+            
+                <p class="input_name select_year">Select year:</p>
+                <select id="year"></select>
+                <div>
+                    <input type="checkbox" id="sort">	
+                    <p class="input_name">Toggle sort</p>
+                </div>
+                <div class="data_table">
+                    <svg id="chart" width="650" height="400"></svg>
+                </div>
             </div>
-            <div class="data_table">
-                <svg id="chart" width="650" height="400"></svg>
-            </div>
-        </div>
-    </div> 
+        </div> 
+    </div>
 </body>
 </html> 
