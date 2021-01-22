@@ -18,12 +18,12 @@ var svgH = d3.select(".chart_H"),
     height = +svgH.attr("height") - margin.top - margin.bottom,
     g = svgH.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var y = d3.scaleBand()			// x = d3.scaleBand()	
+var yH = d3.scaleBand()			// x = d3.scaleBand()	
     .rangeRound([0, height])	// .rangeRound([0, width])
     .paddingInner(0.05)
     .align(0.1);
 
-var x = d3.scaleLinear()		// y = d3.scaleLinear()
+var xH = d3.scaleLinear()		// y = d3.scaleLinear()
     .rangeRound([0, width]);	// .rangeRound([height, 0]);
 
 var z = d3.scaleOrdinal()
@@ -39,8 +39,8 @@ d3.csv("top_ten_countries.csv", function(d, i, columns) {
   var keys = data.columns.slice(1);
 
   data.sort(function(a, b) { return b.total - a.total; });
-  y.domain(data.map(function(d) { return d.Country; }));					// x.domain...
-  x.domain([0, d3.max(data, function(d) { return d.total; })]).nice();	// y.domain...
+  yH.domain(data.map(function(d) { return d.Country; }));					// x.domain...
+  xH.domain([0, d3.max(data, function(d) { return d.total; })]).nice();	// y.domain...
   z.domain(keys);
 
   g.append("g")
@@ -51,23 +51,23 @@ d3.csv("top_ten_countries.csv", function(d, i, columns) {
     .selectAll("rect")
     .data(function(d) { return d; })
     .enter().append("rect")
-      .attr("y", function(d) { return y(d.data.Country); })	    //.attr("x", function(d) { return x(d.data.Country); })
-      .attr("x", function(d) { return x(d[0]); })			    //.attr("y", function(d) { return y(d[1]); })	
-      .attr("width", function(d) { return x(d[1]) - x(d[0]); })	//.attr("height", function(d) { return y(d[0]) - y(d[1]); })
-      .attr("height", y.bandwidth());						    //.attr("width", x.bandwidth());	
+      .attr("y", function(d) { return yH(d.data.Country); })	    //.attr("x", function(d) { return x(d.data.Country); })
+      .attr("x", function(d) { return xH(d[0]); })			    //.attr("y", function(d) { return y(d[1]); })	
+      .attr("width", function(d) { return xH(d[1]) - xH(d[0]); })	//.attr("height", function(d) { return y(d[0]) - y(d[1]); })
+      .attr("height", yH.bandwidth());						    //.attr("width", x.bandwidth());	
 
   g.append("g")
       .attr("class", "axis")
       .attr("transform", "translate(0,0)") 						//  .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisLeft(y));									//   .call(d3.axisBottom(x));
+      .call(d3.axisLeft(yH));									//   .call(d3.axisBottom(x));
 
   g.append("g")
       .attr("class", "axis")
 	  .attr("transform", "translate(0,"+height+")")				// New line
-      .call(d3.axisBottom(x).ticks(null, "s"))					//  .call(d3.axisLeft(y).ticks(null, "s"))
+      .call(d3.axisBottom(xH).ticks(null, "s"))					//  .call(d3.axisLeft(y).ticks(null, "s"))
     .append("text")
       .attr("y", 2)												//     .attr("y", 2)
-      .attr("x", x(x.ticks().pop()) + 0.5) 						//     .attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("x", xH(xH.ticks().pop()) + 0.5) 						//     .attr("y", y(y.ticks().pop()) + 0.5)
       .attr("dy", "0.32em")										//     .attr("dy", "0.32em")
       .attr("fill", "#000")
       .attr("font-weight", "bold")
