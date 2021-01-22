@@ -1,7 +1,8 @@
 body {
 	margin: auto;
 	width: 650px;
-	font: 12px arial;
+    font: 12px ;
+    font-family: Arial, sans-serif;
 }
 
 .input_name {
@@ -11,6 +12,7 @@ body {
 
 .main_info {
     margin: 230px 0 0 -260px;
+    display: flex;
 }
 .olympic_pic {
     display: none;
@@ -32,6 +34,6 @@ body {
     text-anchor: middle;
 }
 
-.toggle_option {
-
+.top_title {
+ white-space: nowrap;
 }
