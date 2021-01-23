@@ -1,0 +1,63 @@
+body {
+	
+    font: 12px ;
+    font-family: Arial, sans-serif;
+}
+
+/* #bkg_img {
+    background-image: url("olympicflag.jpg");
+
+} */
+.input_name {
+    display: inline-block;
+}
+
+
+.main_info {
+        margin: 195px 0 0 70px;
+    display: flex;
+}
+.olympic_pic { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.25;
+    min-width: 1200px;
+    width: 100%;
+    max-height: 1100px;
+    min-height: 800px;
+}
+
+.data_table {
+    z-index: 10;
+    position: relative;
+}
+
+.legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+
+.top_title {
+ white-space: nowrap;
+}
+
+ .user_option{
+ z-index: 10;    
+}
+
+.legend_table {
+    z-index: 10;
+}
+
+.country_tbl {
+   text-align: left;
+}
+.total_mdl_tbl {
+    text-align: right;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
