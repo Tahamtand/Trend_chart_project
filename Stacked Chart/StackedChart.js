@@ -1,5 +1,5 @@
 
-d3.csv("data2.csv").then(d => chart(d))
+d3.csv("data.csv").then(d => chart(d))
 
 function chart(csv) {
 
