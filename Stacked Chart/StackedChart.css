@@ -14,7 +14,7 @@ body {
 
 
 .main_info {
-    margin: 230px 0 0 0;
+        margin: 195px 0 0 70px;
     display: flex;
 }
 .olympic_pic { 
@@ -43,6 +43,21 @@ body {
  white-space: nowrap;
 }
 
-.user_option{
+ .user_option{
  z-index: 10;    
+}
+
+.legend_table {
+    z-index: 10;
+}
+
+.country_tbl {
+   text-align: left;
+}
+.total_mdl_tbl {
+    text-align: right;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
